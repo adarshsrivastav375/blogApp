@@ -65,7 +65,7 @@ export class Blogservice {
       return false;
     }
   }
-  async getPostList(queries = [Query.equal("status", "active")]) {
+  async getPosts(queries = [Query.equal("status", "active")]) {
     try {
       return await this.databases.listDocuments(
         config.DBId,
