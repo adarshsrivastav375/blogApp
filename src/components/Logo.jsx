@@ -1,10 +1,9 @@
 import logo from '/logo.png'
-function Logo({ width = "100px" }) {
+// eslint-disable-next-line react/prop-types
+function Logo({ width, height }) {
   return (
-    <div>
-      <img src={logo} alt="logo" />
-    </div>
-  )
+    <img className={`w-[${width}px] h-[${height}px]`} src={logo} alt="logo" />
+  );
 }
 
 export default Logo

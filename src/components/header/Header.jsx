@@ -36,13 +36,12 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 shadow bg-gradient-to-r from-slate-900 to-yellow-200'>
       <Container>
-        <nav className='flex'>
-          <div className='mr-4'>
+        <nav className='flex items-center'>
+          <div className='mr-4 w-[8vh]'>
             <Link to='/'>
-              <Logo width='70px' />
-
+              <Logo />
             </Link>
           </div>
           <ul className='flex ml-auto'>
@@ -62,9 +61,9 @@ function Header() {
               </li>
             )}
           </ul>
-        </nav>
-      </Container>
-    </header>
+        </nav >
+      </Container >
+    </header >
   )
 }
 

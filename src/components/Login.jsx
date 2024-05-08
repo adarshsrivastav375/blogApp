@@ -14,9 +14,10 @@ function Login() {
   const [error, setError] = useState("")
 
   const login = async (data) => {
+    console.log("check data", data)
     setError("")
     try {
-      const session = await authService.logIn(data);
+      const session = await authService.login(data)
       if (session) {
         const userData = await authService.getCurrentUser()
         if (userData) dispatch(authLogin(userData));
@@ -26,6 +27,7 @@ function Login() {
       setError(error.message)
     }
   }
+
   return (
     <div
       className='flex items-center justify-center w-full'

@@ -6,19 +6,20 @@ import { Outlet } from 'react-router-dom';
 import { Header, Footer, Loader } from './components/index'
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true)
+  const dispatch = useDispatch()
+
   useEffect(() => {
     authService.getCurrentUser()
       .then((userData) => {
         if (userData) {
           dispatch(login({ userData }))
         } else {
-          dispatch(logout());
+          dispatch(logout())
         }
       })
       .finally(() => setLoading(false))
-  }, []);
+  }, [])
 
   return loading ?
     (<Loader />) :
@@ -28,7 +29,7 @@ function App() {
         <main>
           <Outlet />
         </main>
-        <Footer />
+        <Footer/>
       </div>
     </div>)
 }
