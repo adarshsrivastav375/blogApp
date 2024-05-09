@@ -23,13 +23,13 @@ function App() {
 
   return loading ?
     (<Loader />) :
-    (<div className='min-h-screen flex flex-wrap content-between bg-violet-400'>
+    (<div className='flex flex-col min-h-screen bg-purple-400'>
       <div className='w-full block'>
         <Header />
-        <main>
+        <main className='flex-grow'>
           <Outlet />
         </main>
-        <Footer/>
+        <Footer />
       </div>
     </div>)
 }

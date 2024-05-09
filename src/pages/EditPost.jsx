@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react"
+import { useEffect, useState } from "react"
 import { Container, PostForm } from "../components"
 import blogService from "../appwrite/blog"
 import { useNavigate, useParams } from "react-router-dom"
@@ -15,6 +15,7 @@ function EditPost() {
             blogService.getPost(slug).then((post) => {
                 if (post) {
                     setPost(post)
+                    console.log(post);
                 }
             })
         } else {
